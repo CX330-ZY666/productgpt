@@ -128,4 +128,6 @@ npm run build
 
 ## License
 
-当前仓库尚未指定开源许可证。发布前请根据使用目标选择合适许可证；如果未来涉及商业化，需要重新审查内置 Skill 来源与授权边界。
+本项目代码采用 [MIT License](LICENSE)。
+
+注意：部分内置产品能力参考并改写自第三方公开 Skill，来源与授权说明见 [docs/credits.md](docs/credits.md)。如果未来涉及商业化，需要重新审查内置 Skill 来源与授权边界，或重写为完全自研版本。
