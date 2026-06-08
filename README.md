@@ -53,15 +53,6 @@ Repository: https://github.com/CX330-ZY666/productgpt
 - [PRD：大学生 AI 学习助手](docs/examples/prd-ai-study-assistant.md)
 - [用户反馈分析：学习 App 评论整理](docs/examples/feedback-analysis-app-store-reviews.md)
 
-## Screenshots
-
-建议上传 GitHub 后补充 3-5 张截图到 `public/screenshots/`，再在这里展示：
-
-- 工作台：选择 Skill、填写输入信息和参数。
-- 用户 Skill 库：按文档类型管理用户自建 Skill。
-- 生成策略：展示本次生成使用的 Skill、参数和用户可见 Prompt。
-- 二次修改：全文修改、选中片段修改和修改记录。
-
 ## Tech Stack
 
 - Next.js 16 App Router
