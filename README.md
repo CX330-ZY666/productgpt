@@ -1,24 +1,68 @@
 # ProductGPT
 
-面向产品经理的 AI 工作台。ProductGPT 聚焦产品调研、竞品分析、用户反馈分析和 PRD 初稿生成，支持系统默认 Skill、用户自建 Skill、本地历史记录、网页资料抓取、生成策略透明化和二次修改。
+AI Product Manager Workspace for research, competitor analysis, feedback analysis and PRD drafting.
 
-当前项目是个人学习与作品集项目，默认面向本地使用，不依赖账号系统和数据库。
+ProductGPT 是一个面向产品经理的本地优先 AI 工作台。它把产品经理常用的文档生成流程沉淀成可复用 Skill，并支持用户导入自己的 Skill、保存本地历史、查看生成策略和进行二次修改。
 
 Repository: https://github.com/CX330-ZY666/productgpt
 
-## 功能亮点
+> 当前项目是个人学习与作品集项目，默认面向本地使用，不依赖账号系统和数据库。
 
-- 系统默认 Skill：内置产品调研、竞品分析、用户反馈分析、PRD 生成四类能力。
-- 用户自建 Skill：支持从参考文档提取 Skill，也支持导入现成 Skill 并结构化解析。
-- 统一输入流程：按当前 Skill 填写输入信息，可补充资料、网页 URL、其它说明和参数。
-- 生成策略透明化：展示本次使用的 Skill、参数配置、输入信息和用户可见 Prompt 预览。
-- 二次修改：支持全文修改和选中片段局部修改，并记录修改前后差异。
-- 本地历史记录：使用浏览器本地存储保存生成记录、修改记录和用户 Skill。
-- 本地数据备份：支持导出和导入本地数据 JSON。
-- 网页资料抓取：支持抓取公开网页正文；登录页、强动态页面或反爬页面可能失败。
-- Markdown / PDF：支持查看 Markdown 源码、复制、导出 Markdown 和打印为 PDF。
+## Why ProductGPT
 
-## 技术栈
+你当然可以直接用 ChatGPT、Claude 或其它大模型聊天工具写文档。ProductGPT 想解决的是另一类问题：
+
+- 常用 PM 工作流需要被固定下来，而不是每次重新写 Prompt。
+- 生成文档需要可追溯，用户要知道本次用了什么 Skill、参数和输入信息。
+- 好的 PM Skill 应该可以被用户导入、沉淀、复用，而不是散落在收藏夹里。
+- 生成后的文档通常需要持续修改，所以要支持全文修改、局部修改和历史记录。
+- 第一版不强依赖云端数据库，适合作为个人本地工具和作品集项目。
+
+## Features
+
+- **Built-in PM Skills**：内置产品调研、竞品分析、用户反馈分析、PRD 生成四类系统默认 Skill。
+- **Custom Skill Library**：支持从参考文档提取 Skill，也支持导入现成 Skill 并结构化解析。
+- **Unified Input Flow**：按当前 Skill 填写输入信息，可追加资料、网页 URL、其它说明和参数。
+- **Prompt Transparency**：展示本次使用的 Skill、参数配置、输入信息和用户可见 Prompt 预览。
+- **Document Revision**：支持全文修改和选中片段局部修改，并记录修改前后差异。
+- **Local History**：使用浏览器本地存储保存生成记录、修改记录和用户自建 Skill。
+- **Local Backup**：支持导出和导入本地数据 JSON。
+- **Web Source Fetching**：支持抓取公开网页正文；登录页、强动态页面或反爬页面可能失败。
+- **Markdown / PDF**：支持 Markdown 源码、复制、导出 Markdown 和打印为 PDF。
+
+## Who Is It For
+
+适合：
+
+- 产品经理、产品实习生、AI 产品经理
+- 独立开发者和需要快速整理产品文档的人
+- 想把常用 PM Prompt / Skill 固化成工具的人
+- 想研究 AI 文档生成、Prompt 透明化和本地数据工作流的人
+
+暂时不适合：
+
+- 需要团队账号、权限和多人协作的生产环境
+- 需要云端数据库和跨设备同步的场景
+- 需要抓取登录态网页、企业内部文档或强反爬平台的场景
+
+## Examples
+
+不用运行项目，也可以先看这几个示例了解输出形态：
+
+- [竞品分析：AI 文档工具对比](docs/examples/competitor-analysis-ai-doc-tools.md)
+- [PRD：大学生 AI 学习助手](docs/examples/prd-ai-study-assistant.md)
+- [用户反馈分析：学习 App 评论整理](docs/examples/feedback-analysis-app-store-reviews.md)
+
+## Screenshots
+
+建议上传 GitHub 后补充 3-5 张截图到 `public/screenshots/`，再在这里展示：
+
+- 工作台：选择 Skill、填写输入信息和参数。
+- 用户 Skill 库：按文档类型管理用户自建 Skill。
+- 生成策略：展示本次生成使用的 Skill、参数和用户可见 Prompt。
+- 二次修改：全文修改、选中片段修改和修改记录。
+
+## Tech Stack
 
 - Next.js 16 App Router
 - React 19
@@ -28,7 +72,7 @@ Repository: https://github.com/CX330-ZY666/productgpt
 - DeepSeek Chat API
 - IndexedDB / localStorage 本地存储
 
-## 本地运行
+## Quick Start
 
 安装依赖：
 
@@ -60,7 +104,7 @@ npm run dev
 http://localhost:3000/workspace
 ```
 
-## 常用命令
+## Commands
 
 ```bash
 npm run dev
@@ -69,7 +113,7 @@ npm run build
 npm run start
 ```
 
-## 数据说明
+## Local Data
 
 ProductGPT 第一版不做登录、数据库和云端同步，以下数据保存在浏览器本地：
 
@@ -81,7 +125,7 @@ ProductGPT 第一版不做登录、数据库和云端同步，以下数据保存
 
 清理浏览器数据会导致这些本地数据丢失。可以在工作台的本地设置中导出备份 JSON。
 
-## 网页抓取限制
+## Web Fetching Limits
 
 网页抓取只处理公开可访问的静态网页或服务端渲染页面。以下类型通常无法稳定抓取：
 
@@ -91,7 +135,7 @@ ProductGPT 第一版不做登录、数据库和云端同步，以下数据保存
 
 遇到失败时，可以复制网页正文到输入信息中，或整理为 txt/md 后导入用户 Skill 库。
 
-## 目录结构
+## Project Structure
 
 ```text
 app/                     Next.js 页面与 API 路由
@@ -103,17 +147,22 @@ docs/                    Skill 研究、评测、badcase 和来源说明
 lib/                     Prompt、Skill、存储、Markdown 等核心逻辑
 ```
 
-## 发布前检查
+## Roadmap
 
-```bash
-npm run lint
-npm run build
-```
+- [ ] 补充 README 截图和短动图
+- [ ] 部署可体验 Demo
+- [ ] 增加更多高质量系统默认 Skill
+- [ ] 增强用户自建 Skill 的编辑体验
+- [ ] 增加更多导出格式
+- [ ] 探索可选的云端同步和多人协作
 
-确认不要提交：
+## Security
+
+不要提交 `.env.local` 或任何真实 API Key。仓库只提交 `.env.example` 作为配置示例。
+
+当前 `.gitignore` 已忽略：
 
 - `.env.local`
-- API Key
 - `.next/`
 - `node_modules/`
 - 本地日志文件
